@@ -35,7 +35,23 @@ router.get("/instruments", instrument_controller.instrument_list);
 
 
 
+// GET request for creating a Book.
+router.get("/category/create", category_controller.category_create_get);
 
+// POST request for creating Book.
+router.post("/category/create", category_controller.category_create_post);
+
+// GET request for creating a Book.
+router.get("/category/:id/delete", category_controller.category_delete_get);
+
+// POST request for creating Book.
+router.post("/category/:id/delete", category_controller.category_delete_post);
+
+// GET request for creating a Book.
+router.get("/category/:id/update", category_controller.category_update_get);
+
+// POST request for creating Book.
+router.post("/category/:id/update", category_controller.category_update_post);
 
 // GET request for list of all categories.
 router.get("/categories", category_controller.category_list);
