@@ -1,0 +1,15 @@
+extends layout
+
+block content
+    h1 #{title}
+
+    p #[strong Instrument description: ]#{instrument.description}
+    p #[strong Category: ]#{instrument.category.name}
+    p #[strong Price: ]#{instrument.price}
+    p #[strong On stock: ]#{instrument.nrInStock}
+
+    hr
+    p
+        a(href=instrument.url+'/delete') Delete instrument
+    p
+        a(href=instrument.url+'/update') Update instrument

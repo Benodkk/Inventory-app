@@ -6,11 +6,12 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+const catalogRouter = require("./routes/catalog");
 
 var app = express();
 // Set up mongoose connection
 const mongoose = require("mongoose");
-const mongoDB = "insert_your_database_url_here";
+const mongoDB = "mongodb+srv://benodkk:Njbinpsx99@cluster0.g6yff2q.mongodb.net/?retryWrites=true&w=majority";
 mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true });
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "MongoDB connection error:"));
@@ -27,6 +28,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use("/catalog", catalogRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

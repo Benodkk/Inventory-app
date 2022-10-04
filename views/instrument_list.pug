@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h1= title
+
+  ul
+    each instrument  in list
+      li
+        a(href=instrument.url) #{instrument.name}
+        |  - #{instrument.price}
+
+    else
+      li There are no instruments.

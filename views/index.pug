@@ -2,4 +2,16 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
+  p Welcome, this is musical-instruments inventory.
+
+  h1 All instruments
+
+  if error
+    p Error getting dynamic content.
+  else
+    p All instruments in our stock:
+
+    ul
+      li #[strong Instrument categories:] !{data.category_count}
+      li #[strong Instrument types:] !{data.instrument_count}
+

@@ -1,0 +1,25 @@
+extends layout
+
+block content
+
+  h1 Category: #{category.name}
+
+  div(style='margin-left:20px;margin-top:20px')
+
+    h3 Instruments
+
+    dl
+      each instrument in instruments
+        dt
+          a(href=instrument.url) #{instrument.name}
+        |  on stock: #{instrument.nrInStock}
+
+      else
+        p This category has no instruments
+
+
+    hr
+    p
+    a(href=category.url+'/delete') Delete category
+    p
+    a(href=category.url+'/update') Update category

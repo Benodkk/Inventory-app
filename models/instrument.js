@@ -13,7 +13,7 @@ const InstrumentSchema = new Schema({
 // Virtual for instrument's URL
 InstrumentSchema.virtual("url").get(function () {
   // We don't use an arrow function as we'll need the this object
-  return `/instrument/${this._id}`;
+  return `/catalog/instrument/${this._id}`;
 });
 
 // Export model
